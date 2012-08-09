@@ -12,15 +12,15 @@
 define(function () {
     'use strict';
 
-    var isBrowser = typeof window !== "undefined" && window.document,
+    var isTop, testDiv, scrollIntervalId,
+        isBrowser = typeof window !== "undefined" && window.document,
         isPageLoaded = !isBrowser,
         doc = isBrowser ? document : null,
-        readyCalls = [],
-        isTop, testDiv, scrollIntervalId;
+        readyCalls = [];
 
     function runCallbacks(callbacks) {
         var i;
-        for (i = 0; i < callbacks.length; i++) {
+        for (i = 0; i < callbacks.length; i += 1) {
             callbacks[i](doc);
         }
     }
@@ -63,7 +63,7 @@ define(function () {
             testDiv = document.createElement('div');
             try {
                 isTop = window.frameElement === null;
-            } catch(e) {}
+            } catch (e) {}
 
             //DOMContentLoaded approximation that uses a doScroll, as found by
             //Diego Perini: http://javascript.nwbox.com/IEContentLoaded/,
