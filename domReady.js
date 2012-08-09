@@ -84,8 +84,12 @@ define(function () {
         //entering "interactive" or "complete". More details:
         //http://dev.w3.org/html5/spec/the-end.html#the-end
         //http://stackoverflow.com/questions/3665561/document-readystate-of-interactive-vs-ondomcontentloaded
-        if (document.readyState === "complete" ||
-            document.readyState === "interactive") {
+        //Hmm, this is more complicated on further use, see "firing too early"
+        //bug: https://github.com/requirejs/domReady/issues/1
+        //so removing the || document.readyState === "interactive" test.
+        //There is still a window.onload binding that should get fired if
+        //DOMContentLoaded is missed.
+        if (document.readyState === "complete") {
             pageLoaded();
         }
     }
