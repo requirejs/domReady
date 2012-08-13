@@ -1,4 +1,4 @@
-# text
+# domReady
 
 An AMD loader plugin for detecting DOM ready. 
 
