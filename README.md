@@ -7,7 +7,7 @@ AMD loaders that support the same loader plugin API.
 
 ## Docs
 
-See the [RequireJS API text section](http://requirejs.org/docs/api.html#pageload).
+See the [RequireJS API "Page Load Event Support/DOM Ready" section](http://requirejs.org/docs/api.html#pageload).
 
 ## Latest release
 
