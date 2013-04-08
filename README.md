@@ -1,6 +1,6 @@
 # domReady
 
-An AMD loader plugin for detecting DOM ready. 
+An AMD loader plugin for detecting DOM ready.
 
 Known to work in RequireJS, but should work in other
 AMD loaders that support the same loader plugin API.
@@ -26,3 +26,7 @@ They are in the [requirejs](https://github.com/jrburke/requirejs) and
 
 This plugin was in the [requirejs repo](https://github.com/jrburke/requirejs)
 up until the requirejs 2.0 release.
+
+## Contributing
+
+domReady follows the [same contribution model as requirejs](http://requirejs.org/docs/contributing.html) and is considered a sub-project of requirejs.
