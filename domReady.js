@@ -84,12 +84,8 @@ define(function () {
         //entering "interactive" or "complete". More details:
         //http://dev.w3.org/html5/spec/the-end.html#the-end
         //http://stackoverflow.com/questions/3665561/document-readystate-of-interactive-vs-ondomcontentloaded
-        //Hmm, this is more complicated on further use, see "firing too early"
-        //bug: https://github.com/requirejs/domReady/issues/1
-        //so removing the || document.readyState === "interactive" test.
-        //There is still a window.onload binding that should get fired if
-        //DOMContentLoaded is missed.
-        if (document.readyState === "complete") {
+        if (document.readyState === "complete" ||
+            (window.navigator.userAgent.indexOf("MSIE") === -1 && document.readyState === "interactive")) {
             pageLoaded();
         }
     }
@@ -110,7 +106,7 @@ define(function () {
         return domReady;
     }
 
-    domReady.version = '2.0.1';
+    domReady.version = '2.0.2';
 
     /**
      * Loader Plugin API method
