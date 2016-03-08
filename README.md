@@ -15,7 +15,7 @@ The latest release will be available from the "latest" tag.
 
 ## License
 
-Dual-licensed -- new BSD or MIT.
+MIT
 
 ## Where are the tests?
 

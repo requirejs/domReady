@@ -1,5 +1,6 @@
 {
   "name": "domReady",
   "version": "2.0.1",
-  "main": "domReady.js"
+  "main": "domReady.js",
+  "license": "MIT"
 }

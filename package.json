@@ -16,16 +16,7 @@
             "url": "https://github.com/requirejs/domReady.git"
         }
     ],
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "http://www.opensource.org/licenses/mit-license.php"
-        },
-        {
-            "type": "BSD New",
-            "url": "http://opensource.org/licenses/BSD-3-Clause"
-        }
-    ],
+    "license": "MIT",
     "volo": {
         "url": "https://raw.github.com/requirejs/domReady/{version}/domReady.js"
     }
