@@ -77,18 +77,12 @@ define(function () {
             }
         }
 
-        //Check if document already complete, and if so, just trigger page load
-        //listeners. Latest webkit browsers also use "interactive", and
-        //will fire the onDOMContentLoaded before "interactive" but not after
-        //entering "interactive" or "complete". More details:
-        //http://dev.w3.org/html5/spec/the-end.html#the-end
-        //http://stackoverflow.com/questions/3665561/document-readystate-of-interactive-vs-ondomcontentloaded
-        //Hmm, this is more complicated on further use, see "firing too early"
-        //bug: https://github.com/requirejs/domReady/issues/1
-        //so removing the || document.readyState === "interactive" test.
-        //There is still a window.onload binding that should get fired if
-        //DOMContentLoaded is missed.
-        if (document.readyState === "complete") {
+        // Catch cases where $(document).ready() is called
+        // after the browser event has already occurred.
+        // Support: IE6-10
+        // Older IE sometimes signals "interactive" too soon
+        if (document.readyState === "complete" || 
+            (document.readyState !== "loading" && !document.documentElement.doScroll)) {
             pageLoaded();
         }
     }
