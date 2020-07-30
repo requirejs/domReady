@@ -83,7 +83,8 @@ define(function () {
         // Older IE sometimes signals "interactive" too soon
         if (document.readyState === "complete" || 
             (document.readyState !== "loading" && !document.documentElement.doScroll)) {
-            pageLoaded();
+            // Handle it asynchronously to allow scripts the opportunity to delay ready
+            setTimeout(pageLoaded);
         }
     }
 
